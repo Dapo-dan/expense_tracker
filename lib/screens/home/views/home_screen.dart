@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:expense_tracker/screens/add_expense/views/add_expense.dart';
 import 'package:expense_tracker/screens/home/views/main_screen.dart';
 import 'package:expense_tracker/screens/stat/stat.dart';
 import 'package:flutter/cupertino.dart';
@@ -63,7 +64,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             child: const Icon(CupertinoIcons.add)),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const AddExpense(),
+            ),
+          );
+        },
       ),
       body: index == 0 ? const MainScreen() : const StatScreen(),
     );
